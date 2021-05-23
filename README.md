@@ -2,7 +2,7 @@
 [Link to the Project website](https://covidhelp.pythonanywhere.com "CovidHelp")
 
 E-Yantra hackathon submission
-# Discription
+# Description
 COVID-19 pandemic has brought upon us unforeseeable challenges and one of them being  scarcity of resources. The main objective behind developing this website was to provide a one stop destination for COVID related information and sources. Our website has 3 main features like as blog, vaccination, resource lead. 
 
 We identified that a lot of people are facing issues in finding legitimate verified leads for medicines, hospital beds, oxygen etc which is required for treatment. Our website has an exhaustive database of leads which are personally verified by our team, it also enables the users to submit leads which will be verified before being added to our database. 
