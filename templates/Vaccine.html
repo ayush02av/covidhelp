@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> COVID-19 Resources IN</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" type="image/png" href="/static/images/logo.png"/>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/081bf77113.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/css/covid.css">
+</head>
+
+<body>
+
+    <!-- Nav Bar -->
+    <nav>
+        <div class="logo">
+            <a href="/" class="logo">
+                <img src="/static/images/logo.png" alt="covid logo">
+
+                <h4> COVID-19 RESOURCES </h4>
+            </a>
+        </div>
+
+        <ul class="nav-links">
+            <li> <a href="/vaccine"> VACCINE INFO </a> </li>
+            <li> <a href="/blog"> BLOG </a> </li>
+            <li> <a href="/about"> ABOUT </a> </li>
+        </ul>
+
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+
+        </div>
+    </nav>
+
+    <!-- //Nav Bar -->
+    <main>
+
+
+        <!--<form action="#" style="text-align: center; padding: 30px;">-->
+        <!--    <input name="pincode" id="pincode" type="text" pattern="[0-9]*" placeholder="Enter your pincode...">-->
+        <!--    <input name="date" id="date" type="date">-->
+        <!--    <input readonly value="Submit" onclick="ShowVaccineSlots()">-->
+        <!--</form>-->
+
+        <!-- vaccine form -->
+        <div class="main_div">
+            <div class="vaccineBox">
+                <h1>Find Vaccine</h1>
+                <!--<form action="#">-->
+                    <div class="inputBox">
+                        <input name="pincode" id="pincode" type="text" pattern="[0-9]*" placeholder="Pincode" required>
+                    </div>
+                    <div class="inputBox">
+                        <input name="date" id="date" type="date" required>
+                    </div>
+                    <input readonly type="submit" value="Submit" class="btn" onclick="ShowVaccineSlots()">
+                <!--</form>-->
+            </div>
+        </div>
+        <!-- //vaccine form -->
+
+         <h3 style="text-align: center; color: #6a149b; letter-spacing: 1px; font-weight: bold;">Book now on <a href="https://www.cowin.gov.in/home"target="_blank" >CoWin portal</a></h3>
+
+        <!--  table  -->
+        <div class="resource-table">
+            <div class="resource-table">
+                <p id="test"></p>
+                <table id="vaccine-table" class="table">
+                    <thread class="tablethread">
+                        <th>Date</th>
+                        <th>Hospital Name</th>
+                        <th>Vaccine Type</th>
+                        <th>Fees</th>
+                    </thread>
+                    <tbody>
+                        <!--
+                        <tr>
+                            <td data-label="date">28/04/21</td>
+                            <td data-label="organisation">xyz</td>
+                            <td data-label="Contact No.">7982772129</td>
+                            <td data-label="Available">oxygen can</td>
+                            <td data-label="Remarks">7pm-8pm</td>
+                        </tr>
+                        <tr>
+                            <td data-label="date">28/04/21</td>
+                            <td data-label="organisation">xyz</td>
+                            <td data-label="Contact No.">7982772129</td>
+                            <td data-label="Available">oxygen can</td>
+                            <td data-label="Remarks">7pm-8pm</td>
+                        </tr>
+                        <tr>
+                            <td data-label="date">28/04/21</td>
+                            <td data-label="organisation">xyz</td>
+                            <td data-label="Contact No.">7982772129</td>
+                            <td data-label="Available">oxygen can</td>
+                            <td data-label="Remarks">7pm-8pm</td>
+                        </tr>
+                        <tr>
+                            <td data-label="date">28/04/21</td>
+                            <td data-label="Organisation">xyz</td>
+                            <td data-label="Contact No.">7982772129</td>
+                            <td data-label="Available">oxygen can</td>
+                            <td data-label="Remarks">7pm-8pm</td>
+                        </tr>
+                        <tr>
+                            <td data-label="date">28/04/21</td>
+                            <td data-label="organisation">xyz</td>
+                            <td data-label="Contact No.">7982772129</td>
+                            <td data-label="Available">oxygen can</td>
+                            <td data-label="Remarks">7pm-8pm</td>
+                        </tr>
+                        <tr>
+                            <td data-label="date">28/04/21</td>
+                            <td data-label="organisation">xyz</td>
+                            <td data-label="Contact No.">7982772129</td>
+                            <td data-label="Available">oxygen can</td>
+                            <td data-label="Remarks">7pm-8pm</td>
+                        </tr>
+                        -->
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--  table  -->
+    </main>
+
+    <!-- Scripts -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="/static/js/covid.js"></script>
+
+    <script>
+        function ShowVaccineSlots(){
+            var date = document.getElementById("date").value.split('-');
+            date = date[2] + '-' + date[1] + '-' + date[0];
+            var fetchQuery = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=' + document.getElementById("pincode").value + '&date=' + date;
+            //console.log(fetchQuery);
+
+            fetch(fetchQuery)
+                    .then(  (sessionbypin) => {
+                        //console.log(sessionbypin);
+                        return sessionbypin.json();
+                    }).then((actualdata) =>{
+                        //console.log(actualdata);
+                        toDisplay = actualdata.sessions;//[0];
+                        // document.getElementById("test").innerHTML = toDisplay;//Object.entries(actualdata);
+                        // console.log(toDisplay);
+                        for (const property in toDisplay) {
+                            // console.log(`${property}: ${toDisplay[property]["date"]}`);
+                            // console.log(`${property}: ${toDisplay[property]["name"]}`);
+                            // console.log(`${property}: ${toDisplay[property]["vaccine"]}`);
+                            // console.log(`${property}: ${toDisplay[property]["fee"]}`);
+                            var table = document.getElementById("vaccine-table");
+
+                            var row = table.insertRow(-1);
+
+                            var cell1 = row.insertCell(0);
+                            var cell2 = row.insertCell(1);
+                            var cell3 = row.insertCell(2);
+                            var cell4 = row.insertCell(3);
+
+                            cell1.innerHTML = toDisplay[property]["date"];
+                            cell2.innerHTML = toDisplay[property]["name"];
+                            cell3.innerHTML = toDisplay[property]["vaccine"];
+                            cell4.innerHTML = toDisplay[property]["fee"];
+
+                            cell1.setAttribute("data-label", "Date");
+                            cell2.setAttribute("data-label", "Hospital Name");
+                            cell3.setAttribute("data-label", "Vaccine Type");
+                            cell4.setAttribute("data-label", "Fees");
+                        }
+                    })
+
+            // var table = document.getElementById("vaccine-table");
+
+            // var row = table.insertRow(-1);
+
+            // var cell1 = row.insertCell(0);
+            // var cell2 = row.insertCell(1);
+            // var cell3 = row.insertCell(2);
+            // var cell4 = row.insertCell(3);
+
+            // cell1.innerHTML = 'test cell 1';
+            // cell2.innerHTML = 'test cell 2';
+            // cell3.innerHTML = 'test cell 3';
+            // cell4.innerHTML = 'test cell 4';
+
+            // cell1.setAttribute("data-label", "Date");
+            // cell2.setAttribute("data-label", "Hospital Name");
+            // cell3.setAttribute("data-label", "Vaccine Type");
+            // cell4.setAttribute("data-label", "Fees");
+        }
+    </script>
+
+    <!-- //scripts -->
+</body>
+
+</html>

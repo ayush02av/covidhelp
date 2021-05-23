@@ -1,0 +1,207 @@
+    /* ---------------------------------------------- */
+  /*                    GENERAL                     */
+  /* ---------------------------------------------- */
+
+
+  *{
+    Padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+  }
+  html{
+    font-size: 16px;
+  }
+  body{
+    margin: 0;
+
+  }
+
+  /* ---------------------------------------------- */
+  /*                    HEADER                      */
+  /* ---------------------------------------------- */
+  header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    width: 100%;
+    height: 60px;
+
+    margin: 0 auto;
+    background-color: #eeeeee;
+
+  }
+
+  /* -------- LOGO -------- */
+  .logo{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+
+  }
+  .logo img{
+    width: 60px;
+    height: 50px;
+
+  }
+  .logo p{
+    font-weight: bold;
+    color:#6a149b;
+  }
+
+
+  /* -------- NAV -------- */
+
+  nav ul{
+    display: flex;
+    align-items: center;
+  }
+  nav ul li{
+    list-style: none;
+  }
+  nav ul li:last-child{
+    padding-right: 30px;
+  }
+  nav ul li a{
+    text-decoration: none;
+
+    color: #6a149b;
+  }
+
+  /* ---------------------------------------------- */
+  /*                      MAIN                      */
+  /* ---------------------------------------------- */
+  main{
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  .about-us{
+      width: 100%;
+      height: 150px;
+      background-image: url('/static/images/aboutbg.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  .introduction{
+      text-align: center;
+      padding: 10px 20px;
+  }
+
+    /* ---------------------------------------------- */
+  /*                    HEADER                      */
+  /* ---------------------------------------------- */
+  nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 60px;
+
+    margin: 0 auto;
+    background-color: #eeeeee;
+
+  }
+
+  /* -------- LOGO -------- */
+  .logo{
+    display: flex;
+    align-items: center;
+    color:#6a149b;
+
+  }
+  .logo img{
+    width: 60px;
+    height: 50px;
+
+  }
+
+
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+.nav-links li{
+  list-style:none;
+}
+.nav-links a{
+  color:#6a149b;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+.burger{
+  display:none;
+  cursor: pointer;
+}
+.burger div{
+  width:25px;
+  height:3px;
+  background-color:#6a149b;
+  margin:5px;
+  transition: all 0.3s ease;
+}
+@media screen and(max-width:1024px){
+  .nav-links{
+    width:20%;
+  }
+}
+@media screen and (max-width:768px){
+  body{
+    overflow-x: hidden;
+
+  }
+
+  .nav-links{
+    position:fixed;
+    right: 0px;
+    height:92vh;
+    top:8vh;
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:70%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+
+  }
+  .nav-links li{
+    opacity: 0;
+  }
+  .burger{
+    display:block;
+  }
+}
+.nav-active{
+  transform: translateX(0%);
+}
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+
+  }
+}
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px,6px);
+
+}
+
+.toggle .line2{
+  opacity: 0;
+
+}
+
+.toggle .line3{
+  transform: rotate(45deg) translate(-5px,-6px);
+
+}

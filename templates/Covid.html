@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> COVID-19 Resources IN</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="shortcut icon" type="image/png" href="/static/images/logo.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/081bf77113.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/static/css/covid.css">
+</head>
+
+<body>
+    <button id="btnScrollToTop"><i class="fas fa-arrow-up"></i></button>
+  <!-- Nav Bar -->
+  <nav>
+    <div class="logo">
+      <a href="/" class="logo">
+        <img src="/static/images/logo.png" alt="covid logo">
+
+        <h4> COVID-19 RESOURCES </h4>
+      </a>
+    </div>
+
+    <ul class="nav-links">
+      <li> <a href="/vaccine"> VACCINE INFO </a> </li>
+      <li> <a href="/blog"> BLOG </a> </li>
+      <li> <a href="/about"> ABOUT </a> </li>
+    </ul>
+
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+
+    </div>
+  </nav>
+
+  <!-- //Nav Bar -->
+
+  <main>
+    <!--  Cases  -->
+    <div class="stats">
+      <div class="latest-report">
+        <div class="total-cases">
+          <div class="title"> Total Cases </div>
+          <div class="white"> {{ total }} </div>
+          <div class="New-value"> {{ newTotal }} </div>
+        </div>
+        <div class="Active-cases">
+          <div class="title"> Active Cases </div>
+          <div class="blue"> {{ active }} </div>
+          <div class="New-value"> {{ newActive }} </div>
+        </div>
+        <div class="Recovered">
+          <div class="title"> Recoverd </div>
+          <div class="green"> {{ recovered }} </div>
+          <div class="New-value"> {{ newRecovered }} </div>
+        </div>
+        <div class="Deaths">
+          <div class="title"> Deaths </div>
+          <div class="red"> {{ death }} </div>
+          <div class="New-value"> {{ newDeath }} </div>
+        </div>
+      </div>
+    </div>
+    <!--  <p style="text-align: center;
+        color: red;">Last updated on 2021-04-29 13:54:41.844525+00:00</p> -->
+
+
+    <!--  //Cases  -->
+
+    <div class="submit-lead" style="text-align: center; padding: 10px;">
+      <a href="#footer">
+        <button type="submit">Submit Lead</button>
+      </a>
+    </div>
+
+    <div class="resource-text">
+      <p style="text-align: center; padding: 10px 20px;">Although we called all of them and verified it, what works
+        yesterday may not work today or tomorrow. Everyone is running out of stock, capacity and resources so if you
+        find
+        numbers that are switched off/busy/ or not picking up, move on to the next one. We will routinely call and
+        remove
+        the ones that aren’t working and replace it with numbers that work.
+        We hope this helps!</p>
+    </div>
+
+    <!-- dropdown menu -->
+    <div class="wrapper">
+      <ul>
+        <li>resource filter
+          <ul>
+            <li>general</li>
+            <li> oxygen</li>
+            <li> ambulance</li>
+            <li> beds</li>
+            <li> plasma</li>
+            <li> medicine</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- dropdown menu -->
+
+    <!--  table  -->
+    <div class="resource-table">
+      <div class="resource-table">
+
+        <table class="table">
+          <thread class="tablethread">
+            <th>Date</th>
+            <th>organisation</th>
+            <th>Contact No.</th>
+            <th>Available</th>
+            <th>Remarks</th>
+          </thread>
+          <tbody>
+            {% for lead in VerifiedLeads %}
+                <tr>
+                  <td data-label="Last Verified">{{ lead.Timestamp }}</td>
+                  <td data-label="Organisation">{{ lead.Supplier }}</td>
+                  <td data-label="Contact No.">{{ lead.Contact }}</td>
+                  <td data-label="Available">{{ lead.Resource }}</td>
+                  <td data-label="Remarks">{{ lead.Remarks }}</td>
+                </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!--  table  -->
+  </main>
+
+
+  <!-- footer -->
+  <footer id="footer">
+    <div class="main-content">
+      <div class="left box">
+        <h2>About us</h2>
+        <div class="content">
+          <p> We made this site to help people in finding resources in these tough time,
+            we belive that we all fight together we can win this fight against covid-19 </p>
+
+        </div>
+      </div>
+
+      <div class="center box">
+        <h2>Contact Us</h2>
+        <div class="content">
+
+          <div class="phone">
+            <!--<span class="fas fa-phone-alt"></span>-->
+            <!--<span class="text">+999999999</span>-->
+          </div>
+          <div class="email">
+            <span class="fas fa-envelope"></span>
+            <span class="text">covidhelpadgitm@gmail.com</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="right box">
+        <h2>submit Leads</h2>
+        <div class="content">
+          <form action="#">
+            <div class="email">
+              <div class="text">contact No</div>
+              <input type="tel" required>
+            </div>
+            <div class="msg">
+              <div class="text">Lead*</div>
+              <textarea rows="2" cols="25" required></textarea>
+            </div>
+            <div class="btn">
+              <button type="submit">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <center>
+        <span class="credit">Created By <a href="https://www.linkedin.com/in/ayushverma02/" target="_blank">Ayush</a> &
+          <a href="https://www.linkedin.com/in/vaibhav-kumar5/" target="_blank">Vaibhav</a> | </span>
+
+        <span class="far fa-copyright"></span><span> 2021 All rights reserved.</span>
+      </center>
+    </div>
+  </footer>
+  <!-- footer-->
+
+
+
+  <!-- Scripts -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="/static/js/covid.js"></script>
+
+  <!-- //scripts -->
+</body>
+
+</html>
