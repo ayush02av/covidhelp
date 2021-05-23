@@ -60,5 +60,7 @@ Although not a table in our database, but it is a vital part of the website.
 Viewers can check available vaccine slots by filling up their pincode and date, and using cowin api, the available respective vaccine slots are displayed in the vaccine table
 
 <img width="653" alt="Process flow" src="https://user-images.githubusercontent.com/77304656/119273138-19f27a80-bc27-11eb-8a58-9099bc2308b5.png">
-#Data Flow Diagram
+
+# Data Flow Diagram
+<img width="699" alt="DFD" src="https://user-images.githubusercontent.com/77304656/119273248-99804980-bc27-11eb-8e0e-48b95fdf75c6.png">
 
