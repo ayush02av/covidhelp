@@ -64,3 +64,23 @@ Viewers can check available vaccine slots by filling up their pincode and date, 
 # Data Flow Diagram
 <img width="699" alt="DFD" src="https://user-images.githubusercontent.com/77304656/119273248-99804980-bc27-11eb-8e0e-48b95fdf75c6.png">
 
+# Production and Development
+In production mode, in covidhelp/settings.py, make these changes
+
+1) (from line 26)
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = []
+
+## In production mode, keep the debug False
+## And Enter allowed hosts in the ALLOWED_HOSTS section
+
+2) (from line 131)
+## In production, uncomment this line below
+## STATIC_ROOT = '/home/covidhelp/covidhelp/static'
+
+## In production, comment this line below
+STATICFILES_DIRS = [
+    "static/"
+]
