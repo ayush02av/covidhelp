@@ -23,9 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_23pnf8ct5)6n=@3^v*z4sr1)kkij^304h!1&c*8c+vatlgi(9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['covidhelp.pythonanywhere.com']
+ALLOWED_HOSTS = []
+
+# In production mode, keep the debug False
+# And Enter allowed hosts in the ALLOWED_HOSTS section
 
 
 # Application definition
@@ -124,5 +127,14 @@ STATIC_URL = '/static/'
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
 MEDIA_ROOT = '/home/covidhelp/covidhelp/media'
 MEDIA_URL = '/media/'
-STATIC_ROOT = '/home/covidhelp/covidhelp/static'
+
+#In production, uncomment this line below
+#STATIC_ROOT = '/home/covidhelp/covidhelp/static'
+
+#In production, comment this line below
+STATICFILES_DIRS = [
+    "static/"
+]
+
+
 STATIC_URL = '/static/'
