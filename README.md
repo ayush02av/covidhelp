@@ -68,9 +68,10 @@ Viewers can check available vaccine slots by filling up their pincode and date, 
 In production mode, in covidhelp/settings.py, make these changes
 
 1) (from line 26)
-> `DEBUG = True
 
-ALLOWED_HOSTS = []`
+`DEBUG = True`
+
+`ALLOWED_HOSTS = []`
 
 > In production mode, keep the debug False
 > And Enter allowed hosts in the ALLOWED_HOSTS section
